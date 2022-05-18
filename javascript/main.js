@@ -87,7 +87,8 @@ function animate(){
     if(continuar){
         requestAnimationFrame(animate);
     }else{
-        alert("Você perdeu")
+        alert("Você perdeu");
+        document.location.reload(true);
     }
 }
 animate();
