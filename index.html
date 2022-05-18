@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Asteroids</title>
+</head>
+<body>
+    <h1>Pontuação: </h1>
+    <h1 id="pontos">Pontos: </h1>
+    <h2>Número de inimigos: </h2>
+    <h2 id="inimigos"></h2>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 500;
+        canvas.height = 400;
+    </script>
+    <script src="javascript/player.js"></script>
+    <script src="javascript/bullets.js"></script>
+    <script src="javascript/enemies.js"></script>
+    <script src="javascript/main.js"></script>
+</body>
+</html>
