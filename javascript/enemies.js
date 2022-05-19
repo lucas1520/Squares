@@ -1,7 +1,7 @@
 //Lucas Lipinsky - 2022
 
-//numberEnemies = 40;
-numberEnemies = parseInt(prompt("Digite o número de inimigos. Pelo amor de deus, bota apenas um número sem espaço, letras ou vírgulas"));
+numberEnemies = 15;
+//numberEnemies = parseInt(prompt("Digite o número de inimigos. Pelo amor de deus, bota apenas um número sem espaço, letras ou vírgulas"));
 arrayEnemies = [];
 var x = 0;
 var y = 0;
@@ -35,8 +35,8 @@ class Enemie{
         this.x = calcX()
         this.y = calcY();
         this.radius = 50;
-        this.velocityX = (Math.random() * 100) / 90 + 2.5;
-        this.velocityY = (Math.random() * 100) / 90 + 2.5;
+        this.velocityX = (Math.random() * 100) / 90 + 3;
+        this.velocityY = (Math.random() * 100) / 90 + 3;
     }
     
     draw(){

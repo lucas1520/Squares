@@ -7,7 +7,7 @@ class Player{
         this.width = 50;
         this.height = 50;
         this.angle = 90 / 180 * Math.PI;
-        this.speed = 3;
+        this.speed = 7;
         this.weight = 0.1;
         this.friction = 0.02;
         this.impulse = 0.1;
@@ -24,7 +24,12 @@ class Player{
                 this.y < arrayEnemies[i].y + 20 &&
                 this.y + 20 > arrayEnemies[i].y
             ){
-                continuar = false;
+                if(vida > 0){
+                    vida--;
+                    arrayEnemies.splice(0, arrayEnemies.length);
+                }else{
+                    continuar = false;
+                }
             }
         }
     }
@@ -48,13 +53,21 @@ class Player{
     borders(){
         if(this.x - 20 > canvas.width){
             this.x = -20;
+            ponto = ponto + 200;
+            pontoPeso = pontoPeso + 200;
         }if(this.x + 20 < 0){
             this.x = canvas.width + 20;
+            ponto = ponto + 200;
+            pontoPeso = pontoPeso + 200;
         }
         if(this.y - 20 > canvas.height){
             this.y = -20;
+            ponto = ponto + 200;
+            pontoPeso = pontoPeso + 200;
         }if(this.y + 20 < 0){
             this.y = canvas.height + 20;
+            ponto = ponto + 200;
+            pontoPeso = pontoPeso + 200;
         }
     }
     boost(){
@@ -76,10 +89,10 @@ class Player{
     }
     update(){
         if(aPressed){
-            this.angle = this.angle + 5 / 180 * Math.PI;
+            this.angle = this.angle + 6 / 180 * Math.PI;
         }
         if(dPressed){
-            this.angle = this.angle - 5 / 180 * Math.PI;
+            this.angle = this.angle - 6 / 180 * Math.PI;
         }
         if(wPressed){
             this.boost();

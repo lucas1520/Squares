@@ -5,11 +5,16 @@ aPressed = false;
 sPressed = false;
 dPressed = false;
 
+pPressed = false;
+
 shiftPressed = false;
 
 frame = 0;
 
 ponto = 0;
+pontoPeso = 0;
+
+vida = 0;
 
 continuar = true;
 
@@ -50,9 +55,17 @@ document.addEventListener('keyup', function(e){
     }
 });
 
+document.addEventListener('keyup', function(e){
+    if(e.key === 'p') pPressed = true;
+})
+// document.addEventListener('keydown', function(e){
+//     if(e.key === 'p') pPressed = true;
+// })
+
 var pontos = document.getElementById("pontos");
 var nInimigos = document.getElementById("inimigos");
 nInimigos.innerText = numberEnemies;
+var vidaEx = document.getElementById("vida");
 
 function animate(){
     ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -68,13 +81,19 @@ function animate(){
         console.log("teste");
         shiftPressed = !shiftPressed;
     }
+    // if(arrayEnemies.length < numberEnemies){
+
+    // }
+    // for(let i = 0; i < numberEnemies; i++){
+    //     arrayEnemies.push(new Enemie());
+    // }
     for(let i = 0; i < arrayBullet.length; i++){
         arrayBullet[i].update();
     }
     if(arrayBullet.length > numberBullet){
-        arrayBullet.shift();
+        arrayBullet.splice(0, arrayBullet.length);
     }
-    if(frame % 50 === 0){
+    if(frame % 10 === 0){
         arrayEnemies.push(new Enemie);
     }
     for(let i = 0; i < arrayEnemies.length; i++){
@@ -84,9 +103,20 @@ function animate(){
         arrayEnemies.pop(arrayEnemies[0]);
     }
     pontos.innerText = ponto;
+    if(pontoPeso === 2000){
+        vida++;
+        pontoPeso = 0;
+        console.log(vida);
+    }
+    vidaEx.innerText = "Vidas Extras: " + vida;
+    
+
     if(continuar){
         requestAnimationFrame(animate);
-    }else{
+    }if(pPressed){
+        alert("Jogo pausado");
+        pPressed = false;
+    }if(continuar === false){
         alert("Você perdeu");
         document.location.reload(true);
     }
