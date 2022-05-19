@@ -107,8 +107,8 @@ function animate(){
         vida++;
         pontoPeso = 0;
         console.log(vida);
+        vidaEx.innerText = "Vidas Extras: " + vida;
     }
-    vidaEx.innerText = "Vidas Extras: " + vida;
     
 
     if(continuar){
