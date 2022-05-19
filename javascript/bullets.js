@@ -7,7 +7,7 @@ class Bullet {
         this.x = player1.getPosX();
         this.y = player1.getPosY();
         this.angle = player1.getAngle();
-        this.speed = 3;
+        this.speed = 5;
     }
     draw() {
         ctx.beginPath();
@@ -32,7 +32,8 @@ class Bullet {
             ) {
                 arrayEnemies.splice(i, 1);
                 console.log("Colisão detectada");
-                ponto = ponto + 10;
+                arrayBullet.splice(0, arrayBullet.length);
+                ponto = ponto + 20;
             }
         }
         if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
