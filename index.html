@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
     <title>Squares</title>
+    <style>
+        #instrucoes{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <h1>Pontuação: </h1>
@@ -11,6 +16,14 @@
     <h2>Número de inimigos: </h2>
     <h2 id="inimigos"></h2>
     <canvas id="canvas"></canvas>
+    <h1 id="vida">Vidas Extras: </h1>
+    <ul id="instrucoes">
+        <li>Tecla "L" atira</li>
+        <li>Move o triângulo com as teclas "WASD"</li>
+        <li>Cada vez que você passar do limite da área do jogo, você é recompensado com 200 pontos</li>
+        <li>A cada 2000 pontos, uma vida extra é dada</li>
+        <li>Tecla "P" pausa o jogo</li>
+    </ul>
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
