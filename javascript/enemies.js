@@ -35,8 +35,8 @@ class Enemie{
         this.x = calcX()
         this.y = calcY();
         this.radius = 50;
-        this.velocityX = (Math.random() * 100) / 90 + 1;
-        this.velocityY = (Math.random() * 100) / 90 + 1;
+        this.velocityX = (Math.random() * 100) / 90 + 1.7;
+        this.velocityY = (Math.random() * 100) / 90 + 1.7;
     }
     
     draw(){
