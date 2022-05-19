@@ -1,6 +1,6 @@
 //Lucas Lipinsky - 2022
 
-numberEnemies = 15;
+numberEnemies = 20;
 //numberEnemies = parseInt(prompt("Digite o número de inimigos. Pelo amor de deus, bota apenas um número sem espaço, letras ou vírgulas"));
 arrayEnemies = [];
 var x = 0;
